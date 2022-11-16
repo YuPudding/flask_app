@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+ 
+ {% block head %}
+ {% endblock%}
+
+{% block content %}
+    <h1>授業追加</h1>
+
+
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+    {% for message in messages %}
+        <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+    <form action="" method="POST">
+
+        <!-- 後述するCSRF対策に必要 -->
+        <!-- {{ form.csrf_token }} -->
+
+        {{form.lessonname.label}}<br>
+        {{form.lessonname()}}<br>
+        {{form.lessoncount.label}}<br>
+        {{form.lessoncount()}}<br>
+
+        {{form.join_group.label}}<br>
+        {{form.join_group()}}<br>
+
+        {{form.join_tuser.label}}<br>
+        {{form.join_tuser}}<br>
+       
+
+
+
+
+
+        <button>追加</button>
+    </form>
+{% endblock %}

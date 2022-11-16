@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>{{current_user.tuserid}}</div>
+<a href="/logout" role="button">ログアウト</a>
+<a href="/lesson_ad" role="button">授業追加</a>
+<div>授業一覧</div>
+
+{% for lesson in lessons %}
+<a href="/lesson_de/{{lesson.lessonid}}">{{lesson.lessonname}}</a>
+<a href="/lesson_ed/{{lesson.lessonid}}">編集</a><br>
+{%  endfor %}
+
+<div>仮機能</div>
+<a href="/room_ad">部屋追加</a><br>
+<a href="/userlist">ユーザ一覧</a>
+
+
+
+{% endblock %}

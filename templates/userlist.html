@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a href="/group_ad">グループ作成</a><br>
+<a href="/tuser_ad">講師ユーザ作成</a><br>
+<div>講師ユーザ</div>
+{% for tuser in tusers %}
+    {{tuser.tuserid}} {{tuser.tusername}}<br>
+{%  endfor %}
+
+<a href="/user_ad">ユーザ作成</a><br>
+<div>ユーザ</div>
+{% for user in users %}
+    {{user.userid}} {{user.username}} {{user.groupid}}<br>
+{%  endfor %}
+
+
+{% endblock %}

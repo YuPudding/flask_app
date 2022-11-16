@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>出席状況</h1>
+    {% for tasklog in tasklogs %}
+    {{tasklog.userid}}{{tasklog.atdtime}}{{tasklog.state}}<br>
+    {%  endfor %}
+{% endblock %}

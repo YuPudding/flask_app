@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>授業詳細</h1>
+    {{lesson.lessonname}}
+    {{lesson.lessoncount}}
+    <a href="/lessontask_ad/{{lesson.lessonid}}">レッスンタスク作成</a><br>
+
+    {% for lessontask in lessontasks %}
+    <a href="/lessontask_de/{{lessontask.lessontaskid}}">
+        {{lessontask.lessontaskid}} {{lessontask.lessontaskdate}}{{lessontask.periode}}{{lessontask.sutime}}
+    </a>
+    <a href="">編集</a><br>
+    {%  endfor %}
+{% endblock %}

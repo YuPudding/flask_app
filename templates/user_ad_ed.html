@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>ユーザ追加</h1>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+    {% for message in messages %}
+        <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+    <form action="" method="POST">
+
+        
+        <!-- 後述するCSRF対策に必要 -->
+        <!-- {{ form.csrf_token }} -->
+
+        {{form.username.label}}
+        {{form.username()}}
+        {{form.groupid.label}}
+        {{form.groupid()}}
+        {{form.password.label}}
+        {{form.password()}}
+        <button>追加</button>
+    </form>
+{% endblock %}
